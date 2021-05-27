@@ -1,28 +1,15 @@
-//document.getElementById("count-el").innerText = 5;
+let countEl = document.getElementById("count-el"); // pass in arguments
+let saveEL = document.getElementById("save-el");
 
-// store the count
-//let count = 0;
-
-//console.log(count);
-
-//ititialize the count as 0
-//listen for clicks on incrementBtn
-//increm count variable when btn clicked on
-//change count-el in html to reflect new count
-
-//function increment() {
-//    console.log("the button was clicked")
-//}
-
-let laps = 0;
-
-function complaps() {
-    laps = laps + 1
- 
+let count = 0;
+function increment() {
+    count += 1;                                    // increment count on click
+    countEl.textContent = count;
 }
 
-complaps();
-complaps();
-complaps();
-
-console.log(laps);
+function save() {
+    let previousEntries = count + " - ";
+    saveEL.textContent += previousEntries;        // save count, add to previousEntries tab
+    countEl.textContent = 0;                      // reset counter & count after each save
+    count = 0;
+}
